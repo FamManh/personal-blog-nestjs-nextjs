@@ -2,6 +2,10 @@
 server/dist
 server/node_modules
 
+#config
+server/.env
+server/ormconfig.json
+
 # Logs
 server/logs
 server/*.log
