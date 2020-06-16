@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, UsePipes, ValidationPipe, Param, UseGuards } from '@nestjs/common';
+import { Controller, Get, Post, Body, UsePipes, ValidationPipe, Param, UseGuards, Res } from '@nestjs/common';
 
 import { UserService } from './user.service';
 import {LoginUserDTO, RegisterUserDTO, FindOneParams} from './user.dto'
@@ -29,9 +29,13 @@ export class UserController {
     }
 
     @Post('api/login')
-    login(@Body() data: LoginUserDTO) {
+    async login(@Body() data: LoginUserDTO, @Res() res) {
         try {
-            return this.userService.login(data);
+            const clainms = {sub: '1123123'}
+            let userInfo = await this.userService.login(data);
+            res.set('', 'sdfsdf')
+            res.
+            return ;
         } catch (error) {
             throw error;
         }

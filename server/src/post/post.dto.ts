@@ -8,6 +8,7 @@ export class PostRO {
     title: string;
     metaTitle: string;
     slug: string;
+    content: string;
     summary: string;
     published: boolean;
     publishedAt: Date;
